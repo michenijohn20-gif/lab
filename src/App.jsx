@@ -1,19 +1,16 @@
 import React from "react";
-import Article from "./Article";
+import Header from "./Header";
+import About from "./About";
+import ArticleList from "./ArticleList";
 
-function ArticleList({ posts }) {
+function App() {
   return (
-    <main>
-      {posts.map((post) => (
-        <Article
-          key={post.id}
-          title={post.title}
-          date={post.date}
-          preview={post.preview}
-        />
-      ))}
-    </main>
+    <div className="App">
+      <Header name={blogData.name} />
+      <About image={blogData.image} about={blogData.about} />
+      <ArticleList posts={blogData.posts} />
+    </div>
   );
 }
 
-export default ArticleList;
+export default App;
